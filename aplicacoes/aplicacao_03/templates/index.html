@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/assets/css/style.css">
+    <title>Times do Brasil</title>
+</head>
+<body>
+    <h1 id="teams">Times do Brasil</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Estado</th>
+                <th>Apelido</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for time in lista %}
+            <tr>
+                <td>{{ time.nome }}</td>
+                <td>{{ time.estado}}</td>
+                <td>{{ time.apelido }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <section id="register-button-container">
+        <button id="register-button">
+            <a href="/cadastro">Cadastrar novo time</a>
+        </button>
+    </section>
+
+</body>
+</html>

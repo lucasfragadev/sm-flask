@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/assets/css/style.css">
+    <title>Agenda Musical</title>
+</head>
+<body>
+    <h1 id="teams">Agenda de Shows</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Cantor / Banda</th>
+                <th>Discografia</th>
+                <th>Show</th>
+                <th>Cidade</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for time in lista %}
+            <tr>
+                <td>{{ time.nome }}</td>
+                <td>{{ time.discografia}}</td>
+                <td>{{ time.show }}</td>
+                <td>{{ time.cidade }}</td>
+                <td>{{ time.data }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <section id="register-button-container">
+        <button id="register-button">
+            <a href="/cadastro">Cadastrar nova atração</a>
+        </button>
+    </section>
+
+</body>
+</html>
