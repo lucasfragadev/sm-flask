@@ -1,1 +1,1 @@
-# Repositório para o módulo de Flask da Ininity School
+# Repositório para o módulo de Flask da Infinity School
