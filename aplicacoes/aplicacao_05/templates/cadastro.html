@@ -1,23 +1,23 @@
 {% extends "base.html" %}
-{% block title %}Login | ClubesBR{% endblock %}
+{% block title %}Cadastre-se no ClubesBR{% endblock %}
 {% block content %}
         <div class="row justify-content-center">
             <div class="col-md-4">
-                <form method="post" action="/autenticar">
+                <form method="post" action="{{ url_for('criar_usuario') }}">
                     <fieldset class="border p-4">
-                        <legend class="w-auto">Login de usuário</legend>
+                        <legend class="w-auto">Cadastro</legend>
                         <div class="form-group">
-                            <label for="login">Login</label>
-                            <input type="text" class="form-control" id="login" name="login" placeholder="Digite seu login">
+                            <label for="nome">Nome de Usuário</label>
+                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome de usuário">
                         </div>
                         <div class="form-group">
                             <label for="senha">Senha</label>
                             <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha">
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                        <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
                     </fieldset>
                 </form>
             </div>
         </div>
     </div>
-{% endblock %}  
+{% endblock %}

@@ -1,14 +1,14 @@
 {% extends "base.html" %}
-{% block title %}Cadastro de Time{% endblock %}
+{% block title %}Início - Futebol Mania{% endblock %}
 {% block content %}
         <div class="row justify-content-center">
             <div class="col-md-4">
-                <form method="post" action="{{ url_for('adicionar_time') }}">
+                <form action="{{ url_for('atualizar_time', id=time[0]) }}" method="POST">
                     <fieldset class="border p-4">
-                        <legend class="w-auto">Cadastro de Times</legend>
+                        <legend class="w-auto">Editar Time</legend>
                         <div class="form-group">
-                            <label for="nome">Nome:</label>
-                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome" name="nome" value="{{ time[1] }}" required>
                         </div>
                         <div class="form-group">
                             <label for="estado">Estado:</label>
@@ -44,12 +44,14 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="apelido">Apelido:</label>
-                            <input type="text" class="form-control" id="apelido" name="apelido" placeholder="Digite o apelido">
+                            <label for="apelido" class="form-label">Apelido</label>
+                            <input type="text" class="form-control" id="apelido" name="apelido" value="{{ time[3] }}" required>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+                        <button type="submit" class="btn btn-primary btn-block">Atualizar</button>
+                        <a href="{{ url_for('index') }}" class="btn btn-primary btn-block">Voltar</a>
                     </fieldset>
                 </form>
             </div>
         </div>
+        <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
 {% endblock %}
